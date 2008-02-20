@@ -73,5 +73,4 @@ To activate the StatCounter service for your WordPress site:
 == Screenshots ==
 
 1. Example StatCounter.com Summary Stats
-2. A list of visitors to your website
-3. Using the magnify tool, you can "zoom in" on individual visitors and get a detailed report on where they are from, their system settings, and most importantly, what link reffered them to your site and their navigation path through your site. 
+2. Using the magnify tool, you can "zoom in" on individual visitors and get a detailed report on where they are from, their system settings, and most importantly, what link reffered them to your site and their navigation path through your site. 
