@@ -19,7 +19,7 @@ define("key_sc_status"        , "sc_status"          , true);
 
 define("sc_project_default"   , "0"                  , true);
 define("sc_part_default"      , "0"                  , true);
-define("sc_security_default"  , "0"                  , true);
+define("sc_security_default"  , ""                  , true);
 define("sc_status_default"    , sc_disabled          , true);
 define("sc_admin_default"     , sc_enabled           , true);
 
@@ -81,12 +81,11 @@ function sc_options_page() {
 				StatCounter Wordpress Plugin is currently <strong>DISABLED</strong>.
 				</div>
 			<?php } ?>
-			<?php if ( ( get_option( key_sc_project ) == "0" || get_option( key_sc_part ) == "0" || get_option( key_sc_security ) == "0" ) && ( get_option( key_sc_status ) != sc_disabled ) ) { ?>
+			<?php if ( ( get_option( key_sc_project ) == "0" || get_option( key_sc_part ) == "0" ) && ( get_option( key_sc_status ) != sc_disabled ) ) { ?>
 				<div style="margin:10px auto; border:3px #f00 solid; background-color:#fdd; color:#000; padding:10px; text-align:center;">
 				StatCounter Plugin is currently enabled, but the following errors are noted:<ul style="padding:0;margin:0;"><?php
 					echo ( get_option( key_sc_project ) == "0" ? "<li>No <strong>Project ID</strong> has been provided</li>" : "" );
 					echo ( get_option( key_sc_part ) == "0" ? "<li>No <strong>Partition ID</strong> has been provided</li>" : "" );
-					echo ( get_option( key_sc_security ) == "0" ? "<li>No <strong>Security String</strong> has been provided</li>" : "" );
 				?></ul><strong>Tracking will not occur</strong>.
 				</div>
 			<?php } ?>
