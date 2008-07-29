@@ -85,7 +85,6 @@ function sc_options_page() {
 				<div style="margin:10px auto; border:3px #f00 solid; background-color:#fdd; color:#000; padding:10px; text-align:center;">
 				StatCounter Plugin is currently enabled, but the following errors are noted:<ul style="padding:0;margin:0;"><?php
 					echo ( get_option( key_sc_project ) == "0" ? "<li>No <strong>Project ID</strong> has been provided</li>" : "" );
-					echo ( get_option( key_sc_part ) == "0" ? "<li>No <strong>Partition ID</strong> has been provided</li>" : "" );
 				?></ul><strong>Tracking will not occur</strong>.
 				</div>
 			<?php } ?>
