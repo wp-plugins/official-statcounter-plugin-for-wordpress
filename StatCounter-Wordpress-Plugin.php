@@ -81,7 +81,7 @@ function sc_options_page() {
 				StatCounter Wordpress Plugin is currently <strong>DISABLED</strong>.
 				</div>
 			<?php } ?>
-			<?php if ( ( get_option( key_sc_project ) == "0" || get_option( key_sc_part ) == "0" ) && ( get_option( key_sc_status ) != sc_disabled ) ) { ?>
+			<?php if ( ( get_option( key_sc_project ) == "0" ) && ( get_option( key_sc_status ) != sc_disabled ) ) { ?>
 				<div style="margin:10px auto; border:3px #f00 solid; background-color:#fdd; color:#000; padding:10px; text-align:center;">
 				StatCounter Plugin is currently enabled, but the following errors are noted:<ul style="padding:0;margin:0;"><?php
 					echo ( get_option( key_sc_project ) == "0" ? "<li>No <strong>Project ID</strong> has been provided</li>" : "" );
