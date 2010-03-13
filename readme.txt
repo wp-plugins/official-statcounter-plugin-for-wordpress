@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== StatCounter - Free Real Time Visitor Stats ===
 Contributors: Aodhan Cullen
 Donate link: http://www.statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
