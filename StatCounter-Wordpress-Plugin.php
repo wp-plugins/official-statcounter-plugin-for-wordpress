@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Official StatCounter Plugin
- * Version: 1.0
+ * Version: 1.1
  * Plugin URI: http://www.statcounter.com/
  * Description: Adds the StatCounter tracking code to your blog. After uploading this plugin click 'Activate' (to the right) and then afterwards you must visit the <a href="options-general.php?page=StatCounter-Wordpress-Plugin.php">options page</a> and enter your StatCounter Project Info to enable logging.
  * Author: Aodhan Cullen
@@ -9,28 +9,62 @@
  */
 
 // Constants for enabled/disabled state
-define("sc_enabled"  , "enabled", true);
+define("sc_enabled" , "enabled", true);
 define("sc_disabled" , "disabled", true);
 
 // Defaults, etc.
-define("key_sc_project"       , "sc_project"         , true);
-define("key_sc_part"          , "sc_part"            , true);
-define("key_sc_status"        , "sc_status"          , true);
+define("key_sc_project", "sc_project", true);
+define("key_sc_part", "sc_part", true);
+define("key_sc_status", "sc_status", true);
 
-define("sc_project_default"   , "0"                  , true);
-define("sc_part_default"      , "0"                  , true);
-define("sc_security_default"  , ""                  , true);
-define("sc_status_default"    , sc_disabled          , true);
-define("sc_admin_default"     , sc_enabled           , true);
+define("sc_project_default", "0" , true);
+define("sc_part_default", "0" , true);
+define("sc_security_default", "" , true);
+define("sc_status_default", sc_disabled , true);
+define("sc_admin_default", sc_enabled , true);
 
 // Create the default key and status
-add_option(key_sc_status      , sc_status_default    , 'If StatCounter logging in turned on or off.');
-add_option(key_sc_project     , sc_project_default   , 'Your StatCounter Project ID.');
-add_option(key_sc_part        , sc_part_default      , 'Your StatCounter Partition ID.');
-add_option(key_sc_security    , sc_security_default  , 'Your StatCounter Security String.');
+add_option("key_sc_status", "sc_status_default", 'If StatCounter logging in turned on or off.');
+add_option("key_sc_project", "sc_project_default", 'Your StatCounter Project ID.');
+add_option("key_sc_part", "sc_part_default", 'Your StatCounter Partition ID.');
+add_option("key_sc_security", "sc_security_default", 'Your StatCounter Security String.');
 
 // Create a option page for settings
-add_action('admin_menu'       , 'add_sc_option_page' );
+add_action('admin_menu' , 'add_sc_option_page' );
+add_action( 'admin_menu', 'statcounter_admin_menu' );
+
+function statcounter_admin_menu() {
+	if ( stats_get_option('blog_id') ) {
+		// index.php is the one we are hooking on to
+		$hook = add_submenu_page('index.php', __('StatCounter Stats'), __('StatCounter Stats'), 'publish_posts', 'statcounter', 'statcounter_reports_page');
+		add_action("load-$hook", 'statcounter_reports_load');
+	}
+	$hook = add_submenu_page('plugins.php', __('StatCounter Admin'), __('StatCounter Admin'), 'manage_options', 'statcounter_admin', 'sc_options_page');
+}
+
+function statcounter_reports_load() {
+	add_action('admin_head', 'statcounter_reports_head');
+}
+
+function statcounter_reports_head() {
+?>
+<style type="text/css">
+	body { height: 100%; }
+</style>
+<?php
+}
+
+function statcounter_reports_page() {
+	$sc_project = get_option(key_sc_project);
+	
+	
+	echo '<iframe id="statcounter_frame" src="http://my.statcounter.com/project/standard/stats.php?project_id='.$sc_project.'" width="100%" height="2000">
+<p>Your browser does not support iframes.</p>
+</iframe>';
+
+}
+
+
 
 // Hook in the options page function
 function add_sc_option_page() {
@@ -189,8 +223,8 @@ function add_statcounter() {
 	$sc_part = get_option(key_sc_part);
 	$sc_security = get_option(key_sc_security);
 	if (
-		( get_option( key_sc_status ) != sc_disabled  &&  $sc_project > 0 )
-	   ) {
+		( get_option( key_sc_status ) != sc_disabled && $sc_project > 0 )
+	 ) {
 ?>
 	<!-- Start of StatCounter Code -->
 	<script type="text/javascript">
@@ -206,5 +240,4 @@ function add_statcounter() {
 	}
 }
 
-/* Special thanks to Luke Stevenson */
 ?>
