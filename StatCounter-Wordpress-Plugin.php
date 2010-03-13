@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Official StatCounter Plugin
- * Version: 1.1
+ * Version: 1.2
  * Plugin URI: http://www.statcounter.com/
  * Description: Adds the StatCounter tracking code to your blog. After uploading this plugin click 'Activate' (to the right) and then afterwards you must visit the <a href="options-general.php?page=StatCounter-Wordpress-Plugin.php">options page</a> and enter your StatCounter Project Info to enable logging.
  * Author: Aodhan Cullen
@@ -34,11 +34,8 @@ add_action('admin_menu' , 'add_sc_option_page' );
 add_action( 'admin_menu', 'statcounter_admin_menu' );
 
 function statcounter_admin_menu() {
-	if ( stats_get_option('blog_id') ) {
-		// index.php is the one we are hooking on to
-		$hook = add_submenu_page('index.php', __('StatCounter Stats'), __('StatCounter Stats'), 'publish_posts', 'statcounter', 'statcounter_reports_page');
-		add_action("load-$hook", 'statcounter_reports_load');
-	}
+	$hook = add_submenu_page('index.php', __('StatCounter Stats'), __('StatCounter Stats'), 'publish_posts', 'statcounter', 'statcounter_reports_page');
+	add_action("load-$hook", 'statcounter_reports_load');
 	$hook = add_submenu_page('plugins.php', __('StatCounter Admin'), __('StatCounter Admin'), 'manage_options', 'statcounter_admin', 'sc_options_page');
 }
 
