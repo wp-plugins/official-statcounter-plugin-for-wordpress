@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Official StatCounter Plugin
- * Version: 1.3
+ * Version: 1.4
  * Plugin URI: http://www.statcounter.com/
  * Description: Adds the StatCounter tracking code to your blog. After uploading this plugin click 'Activate' (to the right) and then afterwards you must visit the <a href="options-general.php?page=StatCounter-Wordpress-Plugin.php">options page</a> and enter your StatCounter Project Info to enable logging.
  * Author: Aodhan Cullen
@@ -292,6 +292,8 @@ function add_statcounter() {
 	$sc_project = get_option(key_sc_project);
 	$sc_part = get_option(key_sc_part);
 	$sc_security = get_option(key_sc_security);
+	$sc_invisible = 0;
+	$sc_invisible = get_option('sc_invisible');
 	if (
 		( get_option( key_sc_status ) != sc_disabled && $sc_project > 0 )
 	 ) {
@@ -303,12 +305,13 @@ function add_statcounter() {
 		var sc_partition=<?php echo $sc_part; ?>; 
 		var sc_security="<?php echo $sc_security; ?>"; 
 <?php 
-if(get_option('sc_invisible')==1) {
+if($sc_invisible==1) {
 	echo "		var sc_invisible=1;\n"; 
 }?>
 	//-->
 	</script>
 	<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript><div class="statcounter"><a title="web analytics" href="http://www.statcounter.com/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/<?php echo $sc_project; ?>/0/<?php echo $sc_security; ?>/<?php echo $sc_invisible; ?>/" alt="web analytics" ></a></div></noscript>	
 	<!-- End of StatCounter Code -->
 <?php
 	}
