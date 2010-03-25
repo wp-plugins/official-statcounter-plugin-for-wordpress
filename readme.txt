@@ -4,7 +4,7 @@ Donate link: http://www.statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
 Tested up to: 2.9.2
-Stable tag: /trunk/
+Stable tag: 1.4
 
 StatCounter.com powered real-time detailed stats about the visitors to your blog.
 
@@ -74,3 +74,18 @@ To activate the StatCounter service for your WordPress site:
 
 1. Example StatCounter.com Summary Stats
 2. Using the magnify tool, you can "zoom in" on individual visitors and get a detailed report on where they are from, their system settings, and most importantly, what link reffered them to your site and their navigation path through your site. 
+
+== Changes ==
+
+= 1.4 =
+* Added noscript to StatCounter code - allowing non-javascript enabled visitors to be tracked.
+
+= 1.3 =
+* Added counter position option. Allows you to specify the position of the counter in the header or footer.
+* Added 'forced invisibility' option. Allows you to enable an invisible counter without logging into your StatCounter account.
+
+= 1.2 =
+* Fixed critical bug.
+
+= 1.1 =
+* Added ability to view StatCounter Stats from within the Wordpress Admin.
