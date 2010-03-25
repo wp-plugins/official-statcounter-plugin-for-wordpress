@@ -1,10 +1,10 @@
-=== Plugin Name ===
+=== StatCounter - Free Real Time Visitor Stats ===
 Contributors: Aodhan Cullen
 Donate link: http://www.statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
-Tested up to: 2.5.1
-Stable tag: /trunk/
+Tested up to: 2.9.2
+Stable tag: 1.3
 
 StatCounter.com powered real-time detailed stats about the visitors to your blog.
 
