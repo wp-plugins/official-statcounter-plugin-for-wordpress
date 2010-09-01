@@ -3,7 +3,7 @@ Contributors: Aodhan Cullen
 Donate link: http://www.statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
-Tested up to: 2.9.2
+Tested up to: 3.0.1
 Stable tag: 1.5
 
 StatCounter.com powered real-time detailed stats about the visitors to your blog.
@@ -74,7 +74,7 @@ To activate the StatCounter service for your WordPress site:
 1. Example StatCounter.com Summary Stats
 2. Using the magnify tool, you can "zoom in" on individual visitors and get a detailed report on where they are from, their system settings, and most importantly, what link reffered them to your site and their navigation path through your site. 
 
-== Changes ==
+== Changelog ==
 
 = 1.5 =
 * Removed option to set partition - no longer required.
