@@ -4,7 +4,7 @@ Donate link: http://www.statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
 Tested up to: 3.1
-Stable tag: 1.6
+Stable tag: 1.5
 
 StatCounter.com powered real-time detailed stats about the visitors to your blog.
 
