@@ -184,7 +184,6 @@ function sc_options_page() {
 							if(get_option('sc_invisible')==1) {
 								$checked = "checked";
 							}
-							
 							echo "<input type='checkbox' name='sc_invisible' id='sc_invisible' value='1' ".$checked.">\n";
 							?>
 						</td>
