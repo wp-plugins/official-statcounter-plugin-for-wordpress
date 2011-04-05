@@ -22,7 +22,6 @@ define("key_sc_security", "key_sc_security", true);
 
 define("sc_project_default", "0" , true);
 define("sc_security_default", "" , true);
-define("sc_status_default", sc_enabled , true);
 define("sc_position_default", "footer", true);
 define("sc_admin_default", sc_enabled , true);
 
@@ -90,8 +89,9 @@ function sc_options_page() {
 		
 		// Update the position
 		$sc_position = $_POST[key_sc_position];
-		if (($sc_position != sc_header) && ($sc_position != sc_footer))
+		if (($sc_position != 'header') && ($sc_position != 'footer'))
 			$sc_position = sc_position_default;
+
 		update_option(key_sc_position, $sc_position);
 		
 		// Force invisibility
@@ -111,11 +111,6 @@ function sc_options_page() {
 
 		<form method="post" action="options-general.php?page=StatCounter-Wordpress-Plugin.php">
 		<div class="wrap">
-			<?php if ( get_option( key_sc_status ) == sc_disabled ) { ?>
-				<div style="margin:10px auto; border:3px #f00 solid; background-color:#fdd; color:#000; padding:10px; text-align:center;">
-				StatCounter Wordpress Plugin is currently <strong>DISABLED</strong>.
-				</div>
-			<?php } ?>
 			<?php if (get_option( key_sc_project ) == "0") { ?>
 				<div style="margin:10px auto; border:3px #f00 solid; background-color:#fdd; color:#000; padding:10px; text-align:center;">
 				StatCounter Plugin has been activated, but will not be enabled until you enter your <strong>Project ID</strong> and <strong>Security Code</strong>.
