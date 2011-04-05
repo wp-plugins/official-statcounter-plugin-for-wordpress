@@ -8,10 +8,6 @@
  * Author URI: http://statcounter.com/
  */
 
-// Constants for enabled/disabled state
-define("sc_enabled" , "enabled", true);
-define("sc_disabled" , "disabled", true);
-
 // Defaults, etc.
 define("key_sc_project", "sc_project", true);
 define("key_sc_position", "sc_position", true);
@@ -23,7 +19,6 @@ define("key_sc_security", "key_sc_security", true);
 define("sc_project_default", "0" , true);
 define("sc_security_default", "" , true);
 define("sc_position_default", "footer", true);
-define("sc_admin_default", sc_enabled , true);
 
 // Create the default key and status
 add_option(key_sc_project, sc_project_default, 'Your StatCounter Project ID.');
@@ -117,7 +112,7 @@ function sc_options_page() {
 				</div>
 			<?php } ?>
 			<h2>Using StatCounter</h2>
-			<blockquote><a href="http://statcounter.com" style="font-weight:bold;">StatCounter</a> is a free web traffic analysis service, which provides summary stats on all your traffic and a detailed analysis of your last 500 page views. This limit can be increased by upgrading to a subscribing to the paid service.</p>
+			<blockquote><a href="http://statcounter.com" style="font-weight:bold;">StatCounter</a> is a free web traffic analysis service, which provides summary stats on all your traffic and a detailed analysis of your last 500 page views. This limit can be increased by upgrading to a paid service.</p>
 			<p>To activate the StatCounter service for your WordPress site:<ul>
 				<li><a href="http://statcounter.com/sign-up/" style="font-weight:bold;">Sign Up</a> with StatCounter or <a href="http://statcounter.com/add-project/" style="font-weight:bold;">add a new project</a> to your existing account</li>
 				<li>The installation process will detect your WordPress installation and provide you with your <strong>Project ID</strong> and <strong>Security Code</strong></li>
@@ -199,12 +194,8 @@ function sc_options_page() {
 
 <?php
 }
-//print_r($_GET);
-//print_r($_POST);
-//die();
-//echo $sc_position;
+
 $sc_position = get_option(key_sc_position);
-//die($sc_position);
 if ($sc_position=="header") {
 	add_action('wp_head', 'add_statcounter');
 } else {
@@ -236,7 +227,7 @@ if($sc_invisible==1) {
 	//-->
 	</script>
 	<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
-<noscript><div class="statcounter"><a title="web analytics" href="http://www.statcounter.com/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/<?php echo $sc_project; ?>/0/<?php echo $sc_security; ?>/<?php echo $sc_invisible; ?>/" alt="web analytics" ></a></div></noscript>	
+<noscript><div class="statcounter"><a title="web analytics" href="http://statcounter.com/"><img class="statcounter" src="http://c.statcounter.com/<?php echo $sc_project; ?>/0/<?php echo $sc_security; ?>/<?php echo $sc_invisible; ?>/" alt="web analytics" /></a></div></noscript>	
 	<!-- End of StatCounter Code -->
 <?php
 	}
