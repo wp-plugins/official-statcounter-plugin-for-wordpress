@@ -1,6 +1,6 @@
 === StatCounter - Free Real Time Visitor Stats ===
 Contributors: Aodhan Cullen
-Donate link: http://www.statcounter.com/
+Donate link: http://statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
 Tested up to: 3.1
