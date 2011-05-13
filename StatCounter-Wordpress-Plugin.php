@@ -171,7 +171,7 @@ function sc_options_page() {
 					</tr>
 					<tr>
 						<td>
-							<label for="sc_invisible">Force invisibilty:</label>
+							<label for="sc_invisible">Force invisibility:</label>
 						</td>
 						<td>
 							<?php
