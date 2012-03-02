@@ -6,7 +6,6 @@ Requires at least: 2.0.2
 Tested up to: 3.3.1
 Stable tag: 1.6.2
 
-
 StatCounter.com powered real-time detailed stats about the visitors to your blog.
 
 == Description ==
