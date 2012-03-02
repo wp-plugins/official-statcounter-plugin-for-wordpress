@@ -3,8 +3,8 @@ Contributors: Aodhan Cullen
 Donate link: http://statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
-Tested up to: 3.1
-Stable tag: 1.6.1
+Tested up to: 3.3.1
+Stable tag: 1.6.2
 
 StatCounter.com powered real-time detailed stats about the visitors to your blog.
 
@@ -68,6 +68,9 @@ To activate the StatCounter service for your WordPress site:
 
 == Changelog ==
 
+= 1.6.2 =
+* Bug fix for Upgrade with PayPal link.
+
 = 1.6.1 =
 * Correct incorrect spelling of 'invisibility'
 
@@ -89,3 +92,8 @@ To activate the StatCounter service for your WordPress site:
 
 = 1.1 =
 * Added ability to view StatCounter Stats from within the Wordpress Admin.
+
+== Upgrade Notice ==
+
+= 1.6.2 =
+Upgrade to allow for fully functioning PayPal upgrade options.

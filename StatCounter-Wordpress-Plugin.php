@@ -51,7 +51,7 @@ function statcounter_reports_page() {
 	$sc_project = get_option(key_sc_project);
 	
 	
-	echo '<iframe id="statcounter_frame" src="http://my.statcounter.com/project/standard/stats.php?project_id='.$sc_project.'" width="100%" height="2000">
+	echo '<iframe id="statcounter_frame" src="http://statcounter.com/p'.$sc_project.'/?source=wordpress" width="100%" height="2000">
 <p>Your browser does not support iframes.</p>
 </iframe>';
 
