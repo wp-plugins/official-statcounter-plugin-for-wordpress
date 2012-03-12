@@ -4,7 +4,7 @@ Donate link: http://statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
 Tested up to: 3.3.1
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 
 
 StatCounter.com powered real-time detailed stats about the visitors to your blog.
@@ -69,6 +69,9 @@ To activate the StatCounter service for your WordPress site:
 
 == Changelog ==
 
+= 1.6.3 =
+* Bug fix to prevent user entry of whitespace characters for Project ID and Security Code
+
 = 1.6.2 =
 * Bug fix for Upgrade with PayPal link.
 
@@ -95,6 +98,9 @@ To activate the StatCounter service for your WordPress site:
 * Added ability to view StatCounter Stats from within the Wordpress Admin.
 
 == Upgrade Notice ==
+
+= 1.6.3 =
+Bug fix to prevent user entry of whitespace characters for Project ID and Security Code
 
 = 1.6.2 =
 Upgrade to allow for fully functioning PayPal upgrade options.

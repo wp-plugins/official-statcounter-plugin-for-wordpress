@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Official StatCounter Plugin
- * Version: 1.6.2
+ * Version: 1.6.3
  * Plugin URI: http://statcounter.com/
  * Description: Adds the StatCounter tracking code to your blog. <br>To get setup: 1) Activate this plugin  2) Enter your StatCounter Project ID and Security Code in the <a href="options-general.php?page=StatCounter-Wordpress-Plugin.php"><strong>options page</strong></a>.
  * Author: Aodhan Cullen
@@ -71,21 +71,24 @@ function sc_options_page() {
 		check_admin_referer();
 		
 		// Update the Project ID
-		$sc_project = $_POST[key_sc_project];
-		if ($sc_project == '')
+		$sc_project = trim($_POST[key_sc_project]);
+		if ($sc_project == '') {
 			$sc_project = sc_project_default;
+		}
 		update_option(key_sc_project, $sc_project);
 
 		// Update the Security ID
-		$sc_security = $_POST[key_sc_security];
-		if ($sc_security =='')
+		$sc_security = trim($_POST[key_sc_security]);
+		if ($sc_security =='') {
 			$sc_security = sc_security_default;
+		}
 		update_option(key_sc_security, $sc_security);
 		
 		// Update the position
 		$sc_position = $_POST[key_sc_position];
-		if (($sc_position != 'header') && ($sc_position != 'footer'))
+		if (($sc_position != 'header') && ($sc_position != 'footer')) {
 			$sc_position = sc_position_default;
+		}
 
 		update_option(key_sc_position, $sc_position);
 		
