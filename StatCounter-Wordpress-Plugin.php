@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Official StatCounter Plugin
- * Version: 1.6.3
+ * Version: 1.6.5
  * Plugin URI: http://statcounter.com/
  * Description: Adds the StatCounter tracking code to your blog. <br>To get setup: 1) Activate this plugin  2) Enter your StatCounter Project ID and Security Code in the <a href="options-general.php?page=StatCounter-Wordpress-Plugin.php"><strong>options page</strong></a>.
  * Author: Aodhan Cullen
@@ -48,10 +48,14 @@ function statcounter_reports_head() {
 }
 
 function statcounter_reports_page() {
-	$sc_project = get_option(key_sc_project);
-	
-	
-	echo '<iframe id="statcounter_frame" src="http://statcounter.com/p'.$sc_project.'/?source=wordpress" width="100%" height="2000">
+    $sc_project = get_option(key_sc_project);
+    if($sc_project==0) {
+			$sc_link = 'http://statcounter.com/';
+    } else {
+			$sc_link = 'http://statcounter.com/p'.$sc_project.'/?source=wordpress';
+    }
+    	
+        echo '<iframe id="statcounter_frame" src="'.$sc_link.'" width="100%" height="2000">
 <p>Your browser does not support iframes.</p>
 </iframe>';
 

@@ -3,9 +3,10 @@ Contributors: Aodhan Cullen
 Donate link: http://statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
-Tested up to: 3.3.1
-Stable tag: 1.6.3
-
+Tested up to: 3.6
+Stable tag: 1.6.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 StatCounter.com powered real-time detailed stats about the visitors to your blog.
 
@@ -99,8 +100,18 @@ To activate the StatCounter service for your WordPress site:
 
 == Upgrade Notice ==
 
+= 1.6.5 =
+Modified url used for dashboard to not include project id when it has not been set.
+
+= 1.6.4 =
+Improved UI to give error message in dashboard when no project id has been set
+
 = 1.6.3 =
 Bug fix to prevent user entry of whitespace characters for Project ID and Security Code
 
 = 1.6.2 =
 Upgrade to allow for fully functioning PayPal upgrade options.
+
+
+
+
