@@ -21,9 +21,9 @@ define("sc_security_default", "" , true);
 define("sc_position_default", "footer", true);
 
 // Create the default key and status
-add_option(key_sc_project, sc_project_default, 'Your StatCounter Project ID.');
-add_option(key_sc_security, sc_security_default, 'Your StatCounter Security String.');
-add_option("sc_invisible", "0", 'Force invisibility.');
+add_option(key_sc_project, sc_project_default);
+add_option(key_sc_security, sc_security_default);
+add_option("sc_invisible", "0");
 
 // Create a option page for settings
 add_action('admin_menu' , 'add_sc_option_page' );
@@ -66,7 +66,7 @@ function statcounter_reports_page() {
 // Hook in the options page function
 function add_sc_option_page() {
 	global $wpdb;
-	add_options_page('StatCounter Options', 'StatCounter', 8, basename(__FILE__), 'sc_options_page');
+	add_options_page('StatCounter Options', 'StatCounter', "edit_plugins", basename(__FILE__), 'sc_options_page');
 }
 
 function sc_options_page() {
