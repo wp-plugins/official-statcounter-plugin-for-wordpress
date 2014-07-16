@@ -50,9 +50,9 @@ function statcounter_reports_head() {
 function statcounter_reports_page() {
     $sc_project = get_option(key_sc_project);
     if($sc_project==0) {
-			$sc_link = 'http://statcounter.com/';
+			$sc_link = '//statcounter.com/';
     } else {
-			$sc_link = 'http://statcounter.com/p'.$sc_project.'/?source=wordpress';
+			$sc_link = '//statcounter.com/p'.$sc_project.'/?source=wordpress';
     }
     	
         echo '<iframe id="statcounter_frame" src="'.$sc_link.'" width="100%" height="2000">
