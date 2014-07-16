@@ -3,8 +3,8 @@ Contributors: Aodhan Cullen
 Donate link: http://statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
-Tested up to: 3.9
-Stable tag: 1.6.6
+Tested up to: 3.9.1
+Stable tag: 1.6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,9 @@ Improved UI to give error message in dashboard when no project id has been set
 
 == Upgrade Notice ==
 
+= 1.6.7 =
+Support https/http for wordpress admin section when viewing StatCounter stats
+
 = 1.6.6 =
 Removed deprecated function calls
 
@@ -123,3 +126,5 @@ Bug fix to prevent user entry of whitespace characters for Project ID and Securi
 
 = 1.6.2 =
 Upgrade to allow for fully functioning PayPal upgrade options.
+
+
