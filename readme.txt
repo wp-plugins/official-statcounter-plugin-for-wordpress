@@ -3,7 +3,7 @@ Contributors: Aodhan Cullen
 Donate link: http://statcounter.com/
 Tags: web, statistics, stats, hit, counter, visitor, ip, tracker, analytics
 Requires at least: 2.0.2
-Tested up to: 4.0
+Tested up to: 4.1.1
 Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -144,4 +144,3 @@ Bug fix to prevent user entry of whitespace characters for Project ID and Securi
 
 = 1.6.2 =
 Upgrade to allow for fully functioning PayPal upgrade options.
-
