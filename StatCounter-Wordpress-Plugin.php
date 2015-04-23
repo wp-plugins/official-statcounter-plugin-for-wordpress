@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Official StatCounter Plugin
- * Version: 1.6.9
+ * Version: 1.7.1
  * Plugin URI: http://statcounter.com/
  * Description: Adds the StatCounter tracking code to your blog. <br>To get setup: 1) Activate this plugin  2) Enter your StatCounter Project ID and Security Code in the <a href="options-general.php?page=StatCounter-Wordpress-Plugin.php"><strong>options page</strong></a>.
  * Author: Aodhan Cullen
@@ -9,16 +9,14 @@
  */
 
 // Defaults, etc.
-define("key_sc_project", "sc_project", true);
-define("key_sc_position", "sc_position", true);
+// the last 'false' should make these constants case sensitive
+define("key_sc_project", "sc_project", false);
+define("key_sc_position", "sc_position", false);
 // legacy problem with sc_security naming
-define("key_sc_security", "key_sc_security", true);
-
-
-
-define("sc_project_default", "0" , true);
-define("sc_security_default", "" , true);
-define("sc_position_default", "footer", true);
+define("key_sc_security", "key_sc_security", false);
+define("sc_project_default", "0" , false);
+define("sc_security_default", "" , false);
+define("sc_position_default", "footer", false);
 
 // Create the default key and status
 add_option(key_sc_project, sc_project_default);
@@ -223,7 +221,7 @@ function add_statcounter() {
      ) {
 ?>
     <!-- Start of StatCounter Code -->
-    <script type="text/javascript">
+    <script>
     <!-- 
         var sc_project=<?php echo $sc_project; ?>; 
         var sc_security="<?php echo $sc_security; ?>"; 
@@ -234,7 +232,7 @@ if($sc_invisible==1) {
         var scJsHost = (("https:" == document.location.protocol) ?
         "https://secure." : "http://www.");
     //-->
-document.write("<sc"+"ript type='text/javascript' src='" +scJsHost +"statcounter.com/counter/counter.js'></"+"script>");
+document.write("<sc"+"ript src='" +scJsHost +"statcounter.com/counter/counter.js'></"+"script>");
 </script>
 <noscript><div class="statcounter"><a title="web analytics" href="http://statcounter.com/"><img class="statcounter" src="http://c.statcounter.com/<?php echo $sc_project; ?>/0/<?php echo $sc_security; ?>/<?php echo $sc_invisible; ?>/" alt="web analytics" /></a></div></noscript>   
     <!-- End of StatCounter Code -->
